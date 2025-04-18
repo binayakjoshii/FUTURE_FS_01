@@ -1,0 +1,147 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 250 95% 64%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 224 76% 48%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    @apply bg-portfolio-dark text-white;
+    cursor: none;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  @media (pointer: coarse) {
+    html {
+      cursor: auto;
+    }
+    .custom-cursor, .custom-cursor-inner {
+      display: none !important;
+    }
+  }
+
+  ::selection {
+    @apply bg-portfolio-purple/30 text-white;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-portfolio-blue to-portfolio-purple text-transparent bg-clip-text;
+  }
+  
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-20;
+  }
+
+  /* Custom cursor styles */
+  .custom-cursor {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(124, 58, 237, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease;
+  }
+
+  .custom-cursor-inner {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(124, 58, 237, 0.8);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease;
+  }
+
+  .cursor-hover {
+    width: 60px;
+    height: 60px;
+    border-color: rgba(124, 58, 237, 0.8);
+  }
+
+  .cursor-inner-hover {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-portfolio-blue to-portfolio-purple text-white rounded-lg font-medium hover:opacity-90 transition-all duration-300;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 border border-white/20 text-white rounded-lg font-medium hover:bg-white/5 transition-all duration-300;
+  }
+  
+  .nav-link {
+    @apply relative text-white/70 hover:text-white transition-colors after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-portfolio-purple after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left;
+  }
+  
+  .active-nav-link {
+    @apply text-white after:scale-x-100;
+  }
+  
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l border-white/20 last:border-0;
+  }
+  
+  .timeline-dot {
+    @apply absolute -left-[5px] top-0 h-[10px] w-[10px] rounded-full bg-portfolio-purple;
+  }
+}
