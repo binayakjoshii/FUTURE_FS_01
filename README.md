@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Reacto Portfolio Magic ✨
 
 Welcome to **Reacto Portfolio Magic** — a highly interactive, responsive, and visually appealing **React.js** portfolio designed to showcase your work, skills, and accomplishments in the best possible light. Whether you're a developer, designer, or professional looking to build a personal brand, this portfolio offers all the tools and features to stand out online.
@@ -28,3 +29,6 @@ This project is **100% SEO optimized**, ensuring your portfolio ranks well in se
 The project is structured to ensure scalability and maintainability. Here's an overview of the folder structure:
 
 
+=======
+# FUTURE_FS_01
+>>>>>>> 9366948fc474bae368a36e0f873a8c011efb4473
